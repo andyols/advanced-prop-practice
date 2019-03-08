@@ -1,20 +1,20 @@
-import React from "react";
-import "./App.css";
-import PropTypes from "prop-types";
-import SuperComponent from "./components/SuperComponent";
-import Students from "./components/Students";
-import ClassRoom from "./components/ClassRoom";
+import React from 'react'
+import './App.css'
+import PropTypes from 'prop-types'
+import SuperComponent from './components/SuperComponent'
+import Students from './components/Students'
+import ClassRoom from './components/ClassRoom'
 
-console.log(Students);
-console.log(ClassRoom);
+console.log(Students)
+console.log(ClassRoom)
 
 /* eslint-disable no-unused-vars, no-console */
 // function App(props) {
 const product = {
-  name: "ajax",
-  description: "Cleans your bathroom real good"
-};
-const names = ["Bob", "Stand", "Todd", "Ted"];
+  name: 'ajax',
+  description: 'Cleans your bathroom real good'
+}
+const names = ['Bob', 'Stand', 'Todd', 'Ted']
 const App = () => {
   return (
     <div>
@@ -26,16 +26,19 @@ const App = () => {
         an error with a string.. check to see if you used single or double quotes 
        */}
 
-
       {/* pass SuperComponent the string: "hello word" in a prop called "message"*/}
       <SuperComponent message="hello world" />
       {/* pass SuperComponent the string: "goodbye world" in a prop called "message" */}
+      <SuperComponent message="goodbye world" />
 
       {/* pass SuperComponent the string: "Props are awesome world" in a prop called "message" */}
+      <SuperComponent message="Props are awesome world" />
 
       {/* pass SuperComponent the number: 42 in a prop called "magicNumber" */}
+      <SuperComponent magicNumber="42" />
 
       {/* pass SuperComponent the number: 21 in a prop called "magicNumber" */}
+      <SuperComponent magicNumber="21" />
 
       {/*
         What have we seen here? This "SuperComponent" takes multiple 
@@ -45,7 +48,7 @@ const App = () => {
       */}
 
       {/* pass the Students component an array of names in a prop called "names" */}
-      
+
       {/* 
         Go into the Students component and take a look at is. What's it doing?
         Try using the Students component again without the names prop. What happens? 
@@ -65,17 +68,19 @@ const App = () => {
       */}
 
       {/* pass the ClassRoom component the string "Class Number 1" in a prop called className */}
+      <ClassRoom className="Class Number 1">
+        <Students names={names} groupName="test" />
+      </ClassRoom>
 
       {/* render the Students component inside the ClassRoom component; pass Students as a child */}
-
     </div>
-  );
-};
+  )
+}
 
 App.propTypes = {
   products: PropTypes.array.isRequired,
   names: PropTypes.array.isRequired,
   magicNumber: PropTypes.number.isRequired,
   contact: PropTypes.object.isRequired
-};
-export default App;
+}
+export default App
